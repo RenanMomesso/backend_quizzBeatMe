@@ -21,10 +21,7 @@ import { config } from './config';
 import Logger from 'bunyan';
 import 'express-async-errors';
 import applicationRoutes from './routes';
-import {
-  CustomError,
-  IErrorResponse,
-} from './shared/globals/helpers/error-handler';
+import { CustomError, IErrorResponse } from '@global/helpers/error-handler';
 
 const SERVER_POT = 6000;
 const log: Logger = config.createLogger('server');
@@ -128,7 +125,7 @@ export class QuizzAppServer {
     });
   }
 
-  private socketIOConnections(io: Server): void {
+  private socketIOConnections(_io: Server): void {
     console.log('ok');
   }
 }
